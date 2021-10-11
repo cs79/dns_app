@@ -1,4 +1,4 @@
-FROM python:3.5
+FROM python:3.8
 
 RUN apt-get update \
   && apt-get clean \
@@ -11,7 +11,7 @@ RUN groupadd -g 799 nyu && \
 # Set up a working folder and install the pre-reqs
 WORKDIR /app
 
-RUN pip install Flask flask_api waitress
+RUN pip install Flask flask_api waitress requests
 
 USER nyu
 
